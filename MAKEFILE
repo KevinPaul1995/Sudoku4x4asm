@@ -1,0 +1,22 @@
+all: uno.exe dos.exe
+
+uno.exe: uno.obj
+    tlink /v  uno.obj
+
+uno.obj: uno.asm
+    tasm /zi uno.asm
+	
+dos.exe: dos.obj
+    tlink /v  dos.obj
+
+dos.obj: dos.asm
+    tasm /zi dos.asm
+	
+exe:
+	td uno.exe
+	
+clean:
+	del uno.obj
+	del uno.exe
+	del dos.obj
+	del dos.exe
